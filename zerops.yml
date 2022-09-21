@@ -1,0 +1,16 @@
+nodejssyslog:
+  build:
+    base:
+      - nodejs@16
+    build:
+      - npm i
+    deploy:
+      - ./app/index.js
+      - node_modules
+      - package.json
+    cache:
+     - node_modules
+  run:
+    init:
+      - echo "The application is being initialized ...."
+    start: npm start
